@@ -1,7 +1,18 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+nav {
+  display: flex;
+  justify-content: space-around;
   text-align: center;
+  height: 60px;
+  background-color: rgb(223, 209, 191);
+}
+.buscador {
+  width: 150px;
+  height: 40px;
+}
+#fav {
+  margin: 0;
+}
+#up-product {
+  margin: 0;
 }
 
