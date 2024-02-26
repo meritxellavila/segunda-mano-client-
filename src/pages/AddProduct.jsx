@@ -1,10 +1,10 @@
 import React from "react";
 import { useState } from "react";
+import axios from 'axios';
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import InputGroup from 'react-bootstrap/InputGroup';
-import FormCheckLabel from 'react-bootstrap/FormCheckLabel'
 
 function AddProduct() {
   const [name, setName] = useState("");
@@ -15,7 +15,6 @@ function AddProduct() {
     nuevo: false,
     usado: false,
   })
-//   const [selectedState, setSelectedState] = useState(false);
   const [keyWords, setKeyWords] = useState("");
   const [category, setCategory] = useState("");
 
@@ -41,11 +40,6 @@ function AddProduct() {
     setImg(inputImg);
   };
 
-//   const handleSelectedState = () => {
-//     let selectedValue = event.target.value;
-//     console.log(selectedValue);
-//     //setSelectedState(selectedValue);
-//   };
 
  const handleCheckboxChange = (checkboxName) => {
      setCheckboxes((preventCheckBoxes) => ({
@@ -73,25 +67,31 @@ function AddProduct() {
         price: price,
         description: description,
         image: img,
-        nuevo: nuevo,
-        usado: usado,
-        // selectedState: selectedState,
+        nuevo: checkboxes.nuevo,  
+        usado: checkboxes.usado, 
         keyWords: keyWords,
         category: category,
       };
-      const response = await axios.post(`${API_URL}/projects`, newProject);
+      const response = await axios.post(`http://localhost:5005/products`, newProduct);
+      console.log(response);
+
+      setName("");
+      setPrice(0);
+      setDescription("");
+      setImg("url");
+      setCheckboxes({
+        nuevo: false,
+        usado: false,
+      });
+      setKeyWords("");
+      setCategory("");
+      
     } catch (error) {
       console.log(error);
     }
   };
 
-  //   setName("");
-  //   setPrice(0);
-  //   setDescription("");
-  //   setImg("url");
-  //   setState("");
-  //   setKeyWords("");
-  //   setCategory("");
+
 
   return (
     <div>
@@ -139,7 +139,7 @@ function AddProduct() {
           label="KeyWords:"
           className="mb-3"
         >
-          <Form.Control type="text" value={keyWords} onChange={setKeyWords} />
+          <Form.Control type="text" value={keyWords} onChange={handleKeyWords} />
         </FloatingLabel>
         <FloatingLabel
           controlId="floatingInput"
@@ -153,21 +153,6 @@ function AddProduct() {
           />
         </FloatingLabel>
 
-        {/* <InputGroup className="mb-3"> 
-        <FloatingLabel
-          controlId="floatingInput"
-          label="Nuevo"
-          className="mb-3"
-        /> 
-        <InputGroup.Checkbox aria-label="Checkbox for following text input" />
-         
-        <FloatingLabel
-          controlId="floatingInput"
-          label="Usado"
-          className="mb-3"
-        /> 
-        <InputGroup.Checkbox aria-label="Checkbox for following text input" />
-        </InputGroup> */}
 
         <InputGroup className="mb-3 container"> 
         <Form.Check
@@ -188,16 +173,7 @@ function AddProduct() {
         
    
 
-        {/* <Form.Select
-          aria-label="State"
-          name="selectedState"
-          onChange={handleSelectedState}
-          value={setSelectedState}
-        >
-          <option>-- None --</option>
-          <option value="nuevo">Nuevo</option>
-          <option value="usado">Usado</option>
-        </Form.Select> */}
+       
 
         <div>
           <Button variant="outline-secondary" size="lg" type="submit">
