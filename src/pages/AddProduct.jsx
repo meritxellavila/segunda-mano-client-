@@ -168,12 +168,15 @@ function AddProduct() {
               label="Nuevo"
               checked={checkboxes.nuevo}
               onChange={() => handleCheckboxChange("nuevo")}
+              disabled={checkboxes.usado}
+              className="me-3" 
             />
             <Form.Check
               type="checkbox"
               label="Usado"
               checked={checkboxes.usado}
               onChange={() => handleCheckboxChange("usado")}
+              disabled={checkboxes.nuevo}
             />
           </InputGroup>
 
