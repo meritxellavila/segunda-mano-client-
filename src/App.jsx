@@ -11,36 +11,11 @@ import ProductDetall from "./pages/ProductDetall";
 function App() {
   return (
     <Routes>
-<Route 
-    path={"/AddProduct"}
-    element={
-      <AddProduct/>
-    }
-    />
-    <Route 
-    path={"/Favoritos"}
-    element={
-      <Favoritos/>
-    }
-    />
-      <Route 
-    path={"/"}
-    element={
-      <HomePage/>
-    }
-    />
-       <Route 
-    path={"/ListProducts"}
-    element={
-      <ListProducts/>
-    }
-    />
-    <Route 
-    path={"/ProductDetall/:productId"}
-    element={
-      <ProductDetall/>
-    }
-    />
+      <Route path={"/AddProduct"} element={<AddProduct />} />
+      <Route path={"/Favoritos"} element={<Favoritos />} />
+      <Route path={"/"} element={<HomePage />} />
+      <Route path={"/ListProducts"} element={<ListProducts />} />
+      <Route path={"/ProductDetall/:productId"} element={<ProductDetall />} />
     </Routes>
   );
 }
