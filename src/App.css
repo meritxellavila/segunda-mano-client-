@@ -15,5 +15,18 @@ nav {
 #up-product {
   margin: 0;
 }
+#imagen-productos {
+  display: block;
+  margin: auto;
+  width: 40%;
+  border: 6px solid aqua;
+}
 
-
+.propiedades {
+  margin-top: 20px;
+  text-align: center;
+}
+.categorias li {
+  float: left;
+  list-style: none;
+}
