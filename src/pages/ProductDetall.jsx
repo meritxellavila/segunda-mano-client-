@@ -44,7 +44,7 @@ useEffect(() => {
           <ListGroup.Item>{productDetails.category}</ListGroup.Item>
         </ListGroup>
         <Card.Body>
-          <Card.Link href="#">Edit Product</Card.Link>
+          <Card.Link>Edit Product</Card.Link>
           <Card.Link href="#">Reviews</Card.Link>
         </Card.Body>
         <Button variant="outline-secondary" size="lg" type="submit">
