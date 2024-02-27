@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Form, FloatingLabel, Button, InputGroup } from "react-bootstrap";
+import { Form, FloatingLabel, Button, InputGroup, Container } from "react-bootstrap";
 import axios from "axios";
 import API_URL from "../utils/api";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
 
 function EditProduct(props) {
   const navigate = useNavigate()
@@ -104,6 +104,7 @@ console.log(response);
 
   };
   return (
+    <Container>
     <div>
       <h1>EditProduct</h1>
     <Form onSubmit={handleFormSubmit}>
@@ -183,12 +184,19 @@ console.log(response);
         disabled={checkboxes.nuevo}
       />
     </InputGroup>
-
-    <Button variant="outline-secondary" size="lg" type="submit">
-      EditProduct
-    </Button>
+    <Container className="d-flex justify-content-between">
+      <Button variant="outline-secondary" size="lg" type="submit">
+        EditProduct
+      </Button>
+        <Link variant="outline-secondary" to={`/`}>
+          <Button variant="outline-primary" size="lg" type="submit">
+            Back
+          </Button>
+        </Link>
+      </Container>
   </Form>
   </div>
+  </Container>
   )
 
 }

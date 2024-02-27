@@ -3,6 +3,7 @@ import axios from "axios";
 import API_URL from "../utils/api"
 import Navbar from '../components/Navbar';
 import { Link } from 'react-router-dom';
+import ListProducts from "./ListProducts";
 
 function HomePage() {
     const [allProducts, setAllProducts] = useState(null)
@@ -31,17 +32,23 @@ function HomePage() {
                     return (
                         <div key={eachProduct.id}>
                             <Link to={`/ProductDetall/${eachProduct.id}`}>
-                                <img src={eachProduct.img} alt="imagen"  width={"100%"}/>
-                                <h2>{eachProduct.name}</h2>
-                                <h2>{eachProduct.description}</h2>
-                                <p>{eachProduct.price}</p>
+                                <img id='imagen-productos' src={eachProduct.img} alt="imagen" />
+                                <div className='propiedades'>
+                                    <h2>{eachProduct.name}</h2>
+                                    <h4>{eachProduct.description}</h4>
+                                    <p>{eachProduct.price}€</p>
+                                </div>
                             </Link>
                         </div>
                     )
                 })}
 
+
+            
         </div>
     )
+    
+
 }
 
 export default HomePage
