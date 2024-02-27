@@ -9,6 +9,9 @@ function HomePage() {
     const [allProducts, setAllProducts] = useState(null)
 
 
+    
+
+
     useEffect(() => {
         axios.get(`${API_URL}/products`)
         .then((response) => {
@@ -32,7 +35,7 @@ function HomePage() {
                 {allProducts.map((eachProduct) => {
                     return (
                         <div key={eachProduct.id}>
-                            <Link to={`${API_URL}/ProductDetall/${eachProduct.id}`}>
+                            <Link to={`/ProductDetall/${eachProduct.id}`}>
                                 <img id='imagen-productos' src={eachProduct.img} alt="imagen" />
                                 <div className='propiedades'>
                                     <h2>{eachProduct.name}</h2>
@@ -45,11 +48,7 @@ function HomePage() {
                 })}
 
 
-            {/*<Route
-                path="/list-products"
-                render={() => <ListProducts allProducts={allProducts} />}
-            />*/}
-
+            
         </div>
     )
     

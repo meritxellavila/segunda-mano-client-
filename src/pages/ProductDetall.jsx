@@ -1,14 +1,23 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import EditProduct from "../components/EditProduct";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, Navigate } from "react-router-dom";
 import API_URL from "../utils/api"
 import {Button, ListGroup, Card} from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import Collapse from 'react-bootstrap/Collapse';
+import AddReviews from "../components/AddReviews";
 
 
 function ProductDetall() {
-const { productId } = useParams();
-const [productDetails, setProductDetails] = useState(null);
+
+  const navigate = useNavigate()
+
+  const [open, setOpen] = useState(false)
+
+
+  const { productId } = useParams();
+  const [productDetails, setProductDetails] = useState(null);
 
 useEffect(() => {
     axios.get(`${API_URL}/products/${productId}`)     
@@ -25,6 +34,28 @@ useEffect(() => {
     return <h2>Cargando...</h2>;
   }
 
+
+  const deleteProduct = (indexBorrar) =>  {
+    console.log("borrando", indexBorrar)
+
+    axios.delete(`${API_URL}/products/${productId}`)
+    .then(() => {
+      navigate("/")
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+}
+
+
+  const addFav = (product) => {
+    console.log("añadido", product)
+  }
+
+
+
+  
+
   return (
     <>
       <h1>Hello from products details</h1>
@@ -33,8 +64,7 @@ useEffect(() => {
         <Card.Body>
           <Card.Title>{productDetails.name}</Card.Title>
           <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            {productDetails.description}
           </Card.Text>
         </Card.Body>
         <ListGroup className="list-group-flush">
@@ -45,11 +75,24 @@ useEffect(() => {
         </ListGroup>
         <Card.Body>
           <Card.Link href="#">Edit Product</Card.Link>
-          <Card.Link href="#">Reviews</Card.Link>
-        </Card.Body>
-        <Button variant="outline-secondary" size="lg" type="submit">
-          Delete
+          <Button onClick={() => setOpen(!open)}
+            aria-controls="example-collapse-text"
+            aria-expanded={open}
+          >
+            Reviews
+            <Collapse in={open}>
+              <div id="example-collapse-text">
+                <AddReviews />
+              </div>
+            </Collapse>
           </Button>
+        </Card.Body>
+        <Button onClick={deleteProduct} variant="outline-secondary" size="lg" type="submit">
+          Delete
+        </Button>
+        <button onClick={addFav}>
+          ❤️
+        </button>
       </Card>
     </>
   );

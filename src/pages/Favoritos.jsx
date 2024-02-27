@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 function Favoritos(props) {
 
-  const [favProduct, setFavProduct] = useState([])
+  const [favProduct, setFavProduct] = useState()
 
 
   return (
