@@ -62,7 +62,6 @@ function AddProduct() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
     try {
       const newProduct = {
         name: name,
