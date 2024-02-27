@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
+import API_URL from "../utils/api"
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import InputGroup from "react-bootstrap/InputGroup";
 import { Form, Button, Container } from "react-bootstrap";
@@ -74,7 +75,7 @@ function AddProduct() {
         category: category,
       };
       const response = await axios.post(
-        `http://localhost:5005/products`,
+        `${API_URL}/products`,
         newProduct
       );
       console.log(response);

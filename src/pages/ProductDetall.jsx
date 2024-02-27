@@ -3,7 +3,7 @@ import axios from "axios";
 import EditProduct from "./EditProduct";
 import { useParams, Link } from "react-router-dom";
 import API_URL from "../utils/api"
-import {Button, ListGroup, Card} from "react-bootstrap";
+import {Button, ListGroup, Card, Container, Row, Col } from "react-bootstrap";
 
 
 function ProductDetall() {
@@ -27,14 +27,18 @@ useEffect(() => {
 
   return (
     <>
-      <h1>Hello from products details</h1>
-      <Card style={{ width: "18rem" }}>
+    <Container>
+      <Col>
+      <Row>
+      <h1 className="">{productDetails.category}</h1>
+      </Row>
+      <Row>
+      <Card style={{ width: "36rem" }}>
         <Card.Img variant="top" src={productDetails.image} />
         <Card.Body>
           <Card.Title>{productDetails.name}</Card.Title>
           <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+          {productDetails.description}
           </Card.Text>
         </Card.Body>
         <ListGroup className="list-group-flush">
@@ -44,13 +48,18 @@ useEffect(() => {
           <ListGroup.Item>{productDetails.category}</ListGroup.Item>
         </ListGroup>
         <Card.Body>
-          <Card.Link>Edit Product</Card.Link>
+          <Card.Link>
+            <Link to={`/EditProduct/${productId}`}>Edit Product</Link>
+          </Card.Link>
           <Card.Link href="#">Reviews</Card.Link>
         </Card.Body>
         <Button variant="outline-secondary" size="lg" type="submit">
           Delete
           </Button>
       </Card>
+      </Row>
+      </Col>
+      </Container>
     </>
   );
 }
