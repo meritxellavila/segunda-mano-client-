@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import EditProduct from "../components/EditProduct";
+import EditProduct from "./EditProduct";
 import { useParams, Link } from "react-router-dom";
 import API_URL from "../utils/api"
 import {Button, ListGroup, Card} from "react-bootstrap";
@@ -55,4 +55,4 @@ useEffect(() => {
   );
 }
 
-export default ProductDetall;
+export default ProductDetall; 

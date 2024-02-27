@@ -7,6 +7,7 @@ import Favoritos from "./pages/Favoritos";
 import HomePage from "./pages/HomePage";
 import ListProducts from "./pages/ListProducts";
 import ProductDetall from "./pages/ProductDetall";
+import EditProduct from './pages/EditProduct';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path={"/"} element={<HomePage />} />
       <Route path={"/ListProducts"} element={<ListProducts />} />
       <Route path={"/ProductDetall/:productId"} element={<ProductDetall />} />
+      <Route path={"/EditProduct/:productId"} element={<EditProduct />} />
     </Routes>
   );
 }
