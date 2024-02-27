@@ -1,12 +1,12 @@
-import { Routes, Route } from "react-router-dom";
+// import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
-import './App.css'
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
 import AddProduct from "./pages/AddProduct";
-import Favoritos from './pages/Favoritos';
-import HomePage from './pages/HomePage';
-import ListProducts from './pages/ListProducts';
-import ProductDetall from './pages/ProductDetall';
-
+import Favoritos from "./pages/Favoritos";
+import HomePage from "./pages/HomePage";
+import ListProducts from "./pages/ListProducts";
+import ProductDetall from "./pages/ProductDetall";
 
 function App() {
   return (
@@ -42,8 +42,7 @@ function App() {
     }
     />
     </Routes>
-  
-  )
+  );
 }
 
-export default App
+export default App;

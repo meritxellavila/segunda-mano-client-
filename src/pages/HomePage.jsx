@@ -31,7 +31,7 @@ function HomePage() {
                     return (
                         <div key={eachProduct.id}>
                             <Link to={`/ProductDetall/${eachProduct.id}`}>
-                                <img src={eachProduct.img} alt=""  width={"100%"}/>
+                                <img src={eachProduct.img} alt="imagen"  width={"100%"}/>
                                 <h2>{eachProduct.name}</h2>
                                 <h2>{eachProduct.description}</h2>
                                 <p>{eachProduct.price}</p>
