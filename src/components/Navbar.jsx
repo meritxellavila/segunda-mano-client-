@@ -18,8 +18,10 @@ function Navbar() {
             </Link>
           <div className='categorias'>
             <ul>
-              <Link to={"/ListProducts"}>
+              <Link to={`/ListProducts/tecnologia`}>
                 <li>Tecnologia</li>
+              </Link>
+              <Link to={"/ListProducts/Ropa"}>
                 <li>Ropa</li>
               </Link>
             </ul>

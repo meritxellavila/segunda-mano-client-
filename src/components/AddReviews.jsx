@@ -38,7 +38,7 @@ function AddReviews() {
       <Form>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>crear reseña</Form.Label>
-          <Form.Control type="name" placeholder="Nombre" />
+          <Form.Control value={name} onChange={handleName} type="name" placeholder="Nombre" />
           <Form.Text className="text-muted"> 
           </Form.Text>
         </Form.Group>

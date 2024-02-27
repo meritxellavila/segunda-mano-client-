@@ -15,7 +15,7 @@ function App() {
       <Route path={"/AddProduct"} element={<AddProduct />} />
       <Route path={"/Favoritos"} element={<Favoritos />} />
       <Route path={"/"} element={<HomePage />} />
-      <Route path={"/ListProducts"} element={<ListProducts />} />
+      <Route path={"/ListProducts/:category"} element={<ListProducts />} />
       <Route path={"/ProductDetall/:productId"} element={<ProductDetall />} />
       <Route path={"/EditProduct/:productId"} element={<EditProduct />} />
     </Routes>

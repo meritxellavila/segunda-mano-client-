@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import API_URL from '../utils/api'
+import { useParams } from 'react-router-dom'
+import axios from 'axios'
 
 export default function ListProducts() {
+
+  const params = useParams()
+
   const [categoryProducts, setCategoryProducts] = useState(null)
 
   useEffect(() => {
-    axios.get(`${API_URL}/products?category=ropa`)
+    axios.get(`${API_URL}/products?category=${params.category}`)
     .then((response) => {
       console.log(response.data)
       setCategoryProducts(response.data)
