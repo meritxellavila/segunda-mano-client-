@@ -38,14 +38,14 @@ function AddReviews() {
       <Form>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>crear reseña</Form.Label>
-          <Form.Control type="type" placeholder="Nombre" />
+          <Form.Control type="name" placeholder="Nombre" />
           <Form.Text className="text-muted"> 
           </Form.Text>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Descripcion</Form.Label>
-          <Form.Control type="password" placeholder="descripción" />
+          <Form.Control type="name" placeholder="descripcion" />
         </Form.Group>
         <Button variant="primary" type="submit">
           Submit

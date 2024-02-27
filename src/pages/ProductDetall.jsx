@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-<<<<<<< HEAD
-import EditProduct from "../components/EditProduct";
 import { useParams, Link, Navigate } from "react-router-dom";
-=======
-import EditProduct from "./EditProduct";
-import { useParams, Link } from "react-router-dom";
->>>>>>> 5e417cebeba105e9471fa6e8133690bdf16881bc
 import API_URL from "../utils/api"
 import {Button, ListGroup, Card} from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
@@ -79,7 +73,6 @@ useEffect(() => {
           <ListGroup.Item>{productDetails.category}</ListGroup.Item>
         </ListGroup>
         <Card.Body>
-<<<<<<< HEAD
           <Card.Link href="#">Edit Product</Card.Link>
           <Button onClick={() => setOpen(!open)}
             aria-controls="example-collapse-text"
@@ -91,13 +84,6 @@ useEffect(() => {
                 <AddReviews />
               </div>
             </Collapse>
-=======
-          <Card.Link>Edit Product</Card.Link>
-          <Card.Link href="#">Reviews</Card.Link>
-        </Card.Body>
-        <Button variant="outline-secondary" size="lg" type="submit">
-          Delete
->>>>>>> 5e417cebeba105e9471fa6e8133690bdf16881bc
           </Button>
         </Card.Body>
         <Button onClick={deleteProduct} variant="outline-secondary" size="lg" type="submit">

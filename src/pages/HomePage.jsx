@@ -8,10 +8,6 @@ import ListProducts from "./ListProducts";
 function HomePage() {
     const [allProducts, setAllProducts] = useState(null)
 
-
-    
-
-
     useEffect(() => {
         axios.get(`${API_URL}/products`)
         .then((response) => {
