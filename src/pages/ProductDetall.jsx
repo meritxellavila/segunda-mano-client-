@@ -14,12 +14,14 @@ import {
 import { useNavigate } from "react-router-dom";
 import AddReviews from "../components/AddReviews";
 import Navbar from "../components/Navbar"
+import Favoritos from './Favoritos';
 
 function ProductDetall() {
   const navigate = useNavigate();
 
   const { productId } = useParams();
   const [productDetails, setProductDetails] = useState(null);
+  const [favoritos, setFavoritos] = useState([]);
 
   useEffect(() => {
     axios
@@ -37,9 +39,8 @@ function ProductDetall() {
     return <h2>Cargando...</h2>;
   }
 
-  const deleteProduct = (indexBorrar) => {
+  const deleteProduct = () => {
     console.log("borrando", indexBorrar);
-
     axios
       .delete(`${API_URL}/products/${productId}`)
       .then(() => {
@@ -50,8 +51,17 @@ function ProductDetall() {
       });
   };
 
-  const addFav = (product) => {
-    console.log("añadido", product);
+  const addFav = async () => {
+    try {
+      const response = await axios.patch(`${API_URL}/products/${productId}`, {
+        isFavorite: true,
+      });
+      const updatedProductDetails = response.data;
+      setFavoritos([...favoritos, updatedProductDetails]);
+      console.log("Añadido a favoritos", updatedProductDetails);
+    } catch (error) {
+      console.error('Error al añadir a favoritos:', error);
+    }
   };
 
   return (
@@ -89,6 +99,9 @@ function ProductDetall() {
                 <Card.Link>
                   <Link to={`/`}>Back</Link>
                 </Card.Link>
+                {/* <Card.Link>
+          <Link to="/favorites">Ver Favoritos</Link>
+        </Card.Link> */}
               </Card.Body>
               <Button
                 onClick={deleteProduct}
@@ -99,6 +112,7 @@ function ProductDetall() {
                 Delete
               </Button>
               <button onClick={addFav}>❤️</button>
+              <Link to="/favoritos">Ver Favoritos</Link>
             </Card>
           </Row>
         </Col>

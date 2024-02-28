@@ -13,7 +13,7 @@ function Navbar() {
             <Link to={"/AddProduct"}>
                 <p id='up-product'>➕Subir Producto</p>
             </Link>
-            <Link to={"/Favoritos"}>
+            <Link to={"/favoritos"}>
                 <p id='fav'>❤️Favoritos</p>
             </Link>
           <div className='categorias'>
