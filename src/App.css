@@ -34,3 +34,66 @@ nav {
   display: flex;
   justify-content: space-between;
 }
+
+
+.custom-card {
+ 
+  border: 1px solid #ddd; 
+  border-radius: 10px; 
+  overflow: hidden; 
+  text-align: center;
+  margin: 15px;
+}
+
+.custom-card:hover {
+  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.custom-card .btn {
+  background-color: white;
+  color:grey;
+  border: 1px solid grey;
+}
+
+.custom-card .btn:hover {
+  background-color: grey;
+  border-color:grey;
+}
+
+.custom-card .card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.custom-card .card-text {
+  font-size: 1rem;
+  color: #555;
+}
+
+.custom-card .card-img-top {
+  border-radius: 8px;
+}
+
+.custom-card {
+  text-align: center;
+  margin: 15px;
+}
+
+
+.custom-card .card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.custom-card .card-text {
+  font-size: 1rem;
+  color: #555;
+}
+
+.custom-card .card-img-top {
+  border-radius: 8px;
+}
+
