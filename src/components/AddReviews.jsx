@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form';
 import axios from 'axios';
 import Collapse from 'react-bootstrap/Collapse';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function AddReviews() {
 
@@ -39,7 +40,8 @@ function AddReviews() {
       const newReview = {
         name: name,
         description: description,
-        stars: stars
+        stars: stars,
+        productId: params.productId
       };
       const response = await axios.post(
         `${API_URL}/reviews`,
@@ -57,7 +59,7 @@ function AddReviews() {
   };
 
   useEffect(() => {
-    axios.get(`${API_URL}/reviews`)
+    axios.get(`${API_URL}/reviews?productId=${params.productId}`)
       .then((response) => {
         console.log(response.data)
         setReview(response.data)
@@ -65,14 +67,14 @@ function AddReviews() {
       .catch((error) => {
         console.log(error)
       })
-  }, [])
+  }, [params.productId])
 
   const deleteReview = (reviewID) => {
     console.log(reviewID)
 
     axios.delete(`${API_URL}/reviews/${reviewID}`)
       .then((response) => {
-        axios.get(`${API_URL}/reviews`)
+        axios.get(`${API_URL}/reviews?productId=${params.productId}`)
           .then((response) => {
             console.log(response.data)
             setReview(response.data)
@@ -130,9 +132,9 @@ function AddReviews() {
                 <Button onClick={() => deleteReview(review.id)}>
                   🗑️
                 </Button>
-                <Button>
-                  Editar
-                </Button>
+                <Link to={`/EditReview/${review.id}`}>
+                  <button>Editar</button>
+                </Link>
               </li>
             )
           })}
