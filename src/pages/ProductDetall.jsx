@@ -13,11 +13,10 @@ import {
 } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import AddReviews from "../components/AddReviews";
+import Navbar from "../components/Navbar"
 
 function ProductDetall() {
   const navigate = useNavigate();
-
-  const [open, setOpen] = useState(false);
 
   const { productId } = useParams();
   const [productDetails, setProductDetails] = useState(null);
@@ -57,6 +56,7 @@ function ProductDetall() {
 
   return (
     <>
+    <Navbar />
       <Container>
         <Col>
           <Row>
@@ -75,8 +75,8 @@ function ProductDetall() {
                   {productDetails.usado
                     ? "usado"
                     : productDetails.nuevo
-                    ? "nuevo"
-                    : "sin especificar"}
+                      ? "nuevo"
+                      : "sin especificar"}
                 </ListGroup.Item>
                 <ListGroup.Item>{productDetails.keyWords}</ListGroup.Item>
                 <ListGroup.Item>{productDetails.category}</ListGroup.Item>
@@ -85,18 +85,7 @@ function ProductDetall() {
                 <Card.Link>
                   <Link to={`/EditProduct/${productId}`}>Edit Product</Link>
                 </Card.Link>
-                <Button
-                  onClick={() => setOpen(!open)}
-                  aria-controls="example-collapse-text"
-                  aria-expanded={open}
-                >
-                  Reviews
-                  <Collapse in={open}>
-                    <div id="example-collapse-text">
-                      <AddReviews />
-                    </div>
-                  </Collapse>
-                </Button>
+                <AddReviews />
                 <Card.Link>
                   <Link to={`/`}>Back</Link>
                 </Card.Link>

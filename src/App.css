@@ -34,3 +34,12 @@ nav {
   display: flex;
   justify-content: space-between;
 }
+
+#reseñas {
+  padding: 10px;
+  margin: 20px;
+  border: 2px solid black;
+}
+li {
+  list-style: none;
+}
