@@ -24,13 +24,13 @@ const Favoritos = () => {
     return <h1>Cargando...</h1>;
   }
 
-  const favoritosToShow = favoritos.filter((fav) => fav.isFavorite);
+  const filtroFavoritos = favoritos.filter((fav) => fav.isFavorite);
 
   return (
     <div>
       <Container>
       <Row className="flex-wrap">
-          {favoritosToShow.map((fav) => (
+          {filtroFavoritos.map((fav) => (
             <Col key={fav.id} xs={12} sm={6} md={4} lg={4} className="mb-4">
               <Card className="custom-card">
                 <Card.Img variant="top" src={fav.image} alt="imagen" />

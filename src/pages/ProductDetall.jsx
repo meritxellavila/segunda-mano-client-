@@ -105,13 +105,20 @@ function ProductDetall() {
               </Card.Body>
               <Button
                 onClick={deleteProduct}
-                variant="outline-secondary"
+                variant="outline-danger"
                 size="lg"
                 type="submit"
               >
                 Delete
               </Button>
-              <button onClick={addFav}>❤️</button>
+              <Button
+                onClick={addFav}
+                variant="outline-success"
+                size="lg"
+                type="submit"
+              >
+                ❤️
+              </Button>
               <Link to="/favoritos">Ver Favoritos</Link>
             </Card>
           </Row>
