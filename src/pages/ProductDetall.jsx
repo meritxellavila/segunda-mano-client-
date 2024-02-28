@@ -39,7 +39,7 @@ function ProductDetall() {
     return <h2>Cargando...</h2>;
   }
 
-  const deleteProduct = () => {
+  const deleteProduct = (indexBorrar) => {
     console.log("borrando", indexBorrar);
     axios
       .delete(`${API_URL}/products/${productId}`)
@@ -58,6 +58,7 @@ function ProductDetall() {
       });
       const updatedProductDetails = response.data;
       setFavoritos([...favoritos, updatedProductDetails]);
+      navigate("/favoritos")
       console.log("Añadido a favoritos", updatedProductDetails);
     } catch (error) {
       console.error('Error al añadir a favoritos:', error);
