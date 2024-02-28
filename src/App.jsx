@@ -9,6 +9,7 @@ import HomePage from "./pages/HomePage";
 import ListProducts from "./pages/ListProducts";
 import ProductDetall from "./pages/ProductDetall";
 import EditProduct from './pages/EditProduct';
+import EditReview from "./pages/EditReview";
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
       />
       <Route path={"/EditProduct/:productId"} element={<EditProduct />} />
       <Route path="/favoritos" element={<Favoritos favoritos={favoritos} />} />
+      <Route path={"/EditReview/:reviewId"} element={<EditReview />} />
     </Routes>
   );
 }
