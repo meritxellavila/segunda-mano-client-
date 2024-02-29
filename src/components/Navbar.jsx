@@ -8,8 +8,9 @@ function Navbar() {
 
   //1.estado
   const [search, setSearch] = useState("")
+  const [searchResult, setSearchResult] = useState([])
 
-  
+  // flujo controlado del campo
   const handleSearch = (event) => {
     let inputSearch = event.target.value
     console.log(inputSearch)
@@ -20,11 +21,15 @@ function Navbar() {
   const handleBuscar = (e) => {
     e.preventDefault()
 
-    axios.get("")
-
-    console.log("buscando", e)
+    axios.get(`${API_URL}/products?name=${search}`)
+      .then((response) => {
+        console.log(response.data)
+        setSearchResult(response.data)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
   }
-  // flujo controlado del campo
   // boton
   //cuando clique llamar backend, pedir que devuelva todos los productos
 
@@ -34,8 +39,18 @@ function Navbar() {
         <Link to={"/"}>
           <img src={logo} alt="log" width={"60px"} />
         </Link>
-        <button onClick={handleBuscar}>Buscar
+        <button className='results' onClick={handleBuscar}>🔎
           <input onChange={handleSearch} className='buscador' type="search" name="busquedaproducto" placeholder='Buscar...' />
+          {searchResult.map((eachSearch) => {
+            return(
+              <div id='resultados' key={eachSearch.id}>
+                <Link to={`/ProductDetall/${eachSearch.id}`}>
+                  <img src={eachSearch.image} alt="imagen" />
+                  <h5>{eachSearch.name}</h5>  
+                </Link>
+              </div>
+            )
+          })}
         </button>
         <Link to={"/AddProduct"}>
           <p id='up-product'>➕Subir Producto</p>

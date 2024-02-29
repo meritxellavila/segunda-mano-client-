@@ -10,18 +10,13 @@ import ListProducts from "./pages/ListProducts";
 import ProductDetall from "./pages/ProductDetall";
 import EditProduct from './pages/EditProduct';
 import EditReview from "./pages/EditReview";
-<<<<<<< HEAD
 import Navbar from "./components/Navbar";
-=======
-import NotFound from "./pages/NotFound";
->>>>>>> e7b248ada516cf5c340d0c9e8a4f855414f572b7
 
 function App() {
 
   const [favoritos, setFavorites] = useState([]);
 
   return (
-<<<<<<< HEAD
     <div>
       <Navbar />
 
@@ -30,6 +25,7 @@ function App() {
         {/* <Route path={"/Favoritos"} element={<Favoritos />} /> */}
         <Route path={"/"} element={<HomePage />} />
         <Route path={"/ListProducts/:category"} element={<ListProducts />} />
+        <Route path={"/ListProducts/:search"} element={<ListProducts />} />
         {/* <Route path={"/ProductDetall/:productId"} element={<ProductDetall />} /> */}
         <Route
           path={"/ProductDetall/:productId"}
@@ -40,23 +36,6 @@ function App() {
         <Route path={"/EditReview/:reviewId"} element={<EditReview />} />
       </Routes>
     </div>
-=======
-    <Routes>
-      <Route path={"/AddProduct"} element={<AddProduct />} />
-      {/* <Route path={"/Favoritos"} element={<Favoritos />} /> */}
-      <Route path={"/"} element={<HomePage />} />
-      <Route path={"/ListProducts/:category"} element={<ListProducts />} />
-      {/* <Route path={"/ProductDetall/:productId"} element={<ProductDetall />} /> */}
-      <Route
-        path={"/ProductDetall/:productId"}
-        element={<ProductDetall setFavorites={setFavorites} />}
-      />
-      <Route path={"/EditProduct/:productId"} element={<EditProduct />} />
-      <Route path={"/favoritos"} element={<Favoritos />} />
-      <Route path={"/EditReview/:reviewId"} element={<EditReview />} />
-      <Route path={"*"} element={<NotFound />} />
-    </Routes>
->>>>>>> e7b248ada516cf5c340d0c9e8a4f855414f572b7
   );
 }
 

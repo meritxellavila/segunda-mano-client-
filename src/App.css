@@ -60,3 +60,16 @@ li {
     margin-top: 20%;
   }
 }
+#resultados {
+  text-transform: uppercase;
+  margin: 10px;
+  border: 2px solid rgb(202, 13, 13);
+}
+.results {
+  
+  width: 300px;
+  position: relative;
+  z-index: 10;
+  background-color: white;
+  margin-top: 30px;
+}

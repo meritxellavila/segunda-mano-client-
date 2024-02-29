@@ -3,7 +3,6 @@ import { Form, FloatingLabel, Button, InputGroup, Container } from "react-bootst
 import axios from "axios";
 import API_URL from "../utils/api";
 import { useNavigate, useParams, Link } from "react-router-dom";
-import Navbar from '../components/Navbar';
 
 
 function EditReview() {
@@ -63,7 +62,6 @@ function EditReview() {
 
     return (
         <div>
-            <Navbar />
             <Container>
                 <h1>Edit Review</h1>
                 <Form onSubmit={handleSubmit}>
