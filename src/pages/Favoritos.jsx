@@ -8,9 +8,11 @@ const Favoritos = () => {
   const [favoritos, setFavoritos] = useState(null);
 
   useEffect(() => {
+    //solicitud GET para obtener la lista de productos 
     axios
       .get(`${API_URL}/products`)
       .then((response) => {
+        //actualizar el estado
         console.log(response.data);
         setFavoritos(response.data);
       })
@@ -24,7 +26,12 @@ const Favoritos = () => {
     return <h1>Cargando...</h1>;
   }
 
-  const filtroFavoritos = favoritos.filter((fav) => fav.isFavorite);
+  function obtenerFavoritos(listaFavoritos) {
+    return listaFavoritos.filter(function(fav)  {
+      return fav.isFavorite === true; //retorna sel.fav. [true]
+    });
+  }
+  const filtroFavoritos = obtenerFavoritos(favoritos);//almacena lo que luego mapeo y pinto en pantalla
 
   return (
     <div>

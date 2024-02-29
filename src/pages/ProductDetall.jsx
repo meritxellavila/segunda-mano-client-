@@ -51,14 +51,17 @@ function ProductDetall() {
       });
   };
 
+
+//funcion de añadir a favoritos (la tenemos predefinida como false)
   const addFav = async () => {
     try {
+      //patch para poder modificar el valor de la propiedad fav ya que no neccesito todo
       const response = await axios.patch(`${API_URL}/products/${productId}`, {
         isFavorite: true,
       });
-      const updatedProductDetails = response.data;
-      setFavoritos([...favoritos, updatedProductDetails]);
-      navigate("/favoritos")
+      const updatedProductDetails = response.data;//almaceno la el nuevo estado del producto = true
+      setFavoritos([...favoritos, updatedProductDetails]); //actualizo el estado, el array y agrego el producto actualizado.
+      navigate("/favoritos") 
       console.log("Añadido a favoritos", updatedProductDetails);
     } catch (error) {
       console.error('Error al añadir a favoritos:', error);
@@ -99,9 +102,6 @@ function ProductDetall() {
                 <Card.Link>
                   <Link to={`/`}>Back</Link>
                 </Card.Link>
-                {/* <Card.Link>
-          <Link to="/favorites">Ver Favoritos</Link>
-        </Card.Link> */}
               </Card.Body>
               <Button
                 onClick={deleteProduct}
