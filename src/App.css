@@ -3,7 +3,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   text-align: center;
-  height: 60px;
+  height: 100px;
   background-color: rgb(223, 209, 191);
 }
 .buscador {
@@ -43,4 +43,20 @@ nav {
 }
 li {
   list-style: none;
+  text-decoration: underline;
+}
+.titulo {
+  text-transform: uppercase;
+}
+
+#spinner {
+  margin-left: 50%;
+  margin-top: 50%;
+}
+
+@media(min-width: 1000px) {
+  #spinner {
+    margin-left: 20%;
+    margin-top: 20%;
+  }
 }

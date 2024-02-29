@@ -52,6 +52,8 @@ function AddReviews() {
       setName("");
       setDescription("")
       setStars(0)
+      console.log("esto es review", review)
+      console.log("esto es response", response.data)
       setReview([...review, response.data])
     } catch (error) {
       console.log(error);

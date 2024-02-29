@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import API_URL from "../utils/api";
-import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
 import { Card, Button, Container, Row, Col } from "react-bootstrap";
+import Spinner from 'react-bootstrap/Spinner';
 
 
 function HomePage() {
@@ -23,12 +23,11 @@ function HomePage() {
   }, []);
 
   if (allProducts === null) {
-    return <h1>Cargando...</h1>;
+    return <Spinner id="spinner" animation="border" variant="warning" />
   }
 
   return (
     <div>
-      <Navbar />
       <Container>
       <Row className="flex-wrap">
           {allProducts.map((eachProduct) => (
@@ -47,7 +46,7 @@ function HomePage() {
                 <Card.Body>
                      <Link to={`/ProductDetall/${eachProduct.id}`}>
                     <Button variant="outline-secondary" size="lg" type="submit">
-                      Ver detalles
+                      Ver Detalles
                     </Button>
                   </Link>
                 </Card.Body>

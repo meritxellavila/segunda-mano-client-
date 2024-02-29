@@ -13,8 +13,8 @@ import {
 } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import AddReviews from "../components/AddReviews";
-import Navbar from "../components/Navbar"
 import Favoritos from './Favoritos';
+import Spinner from 'react-bootstrap/Spinner';
 
 function ProductDetall() {
   const navigate = useNavigate();
@@ -36,7 +36,7 @@ function ProductDetall() {
   }, [productId]); //cade vez que el valor de product id cambie, se ejecutara el useEffect.si fuer []
   // solo se ejecutaria una vez.
   if (productDetails === null) {
-    return <h2>Cargando...</h2>;
+    return <Spinner id="spinner" animation="border" variant="warning" />
   }
 
   const deleteProduct = (indexBorrar) => {
@@ -67,11 +67,10 @@ function ProductDetall() {
 
   return (
     <>
-    <Navbar />
       <Container>
         <Col>
           <Row>
-            <h1 className="">{productDetails.category}</h1>
+            <h1 className="titulo">{productDetails.category}</h1>
           </Row>
           <Row>
             <Card style={{ width: "36rem" }}>
@@ -112,6 +111,7 @@ function ProductDetall() {
               >
                 Delete
               </Button>
+              <br />
               <Button
                 onClick={addFav}
                 variant="outline-success"
@@ -120,6 +120,7 @@ function ProductDetall() {
               >
                 ❤️
               </Button>
+              <br />
               <Link to="/favoritos">Ver Favoritos</Link>
             </Card>
           </Row>
