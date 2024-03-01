@@ -4,11 +4,11 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
 import Collapse from 'react-bootstrap/Collapse';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 function AddReviews() {
-
+  const navigate = useNavigate()
   const params = useParams()
 
   const [name, setName] = useState("")
@@ -57,6 +57,7 @@ function AddReviews() {
       setReview([...review, response.data])
     } catch (error) {
       console.log(error);
+      navigate("/error")
     }
   };
 

@@ -32,6 +32,7 @@ function ProductDetall() {
       })
       .catch((error) => {
         console.error(error);
+        navigate("/error")
       });
   }, [productId]); //cade vez que el valor de product id cambie, se ejecutara el useEffect.si fuer []
   // solo se ejecutaria una vez.
@@ -48,6 +49,7 @@ function ProductDetall() {
       })
       .catch((error) => {
         console.log(error);
+        navigate("/error")
       });
   };
 
@@ -65,6 +67,7 @@ function ProductDetall() {
       // console.log("Añadido a favoritos", updatedProductDetails);
     } catch (error) {
       console.error('Error al añadir a favoritos:', error);
+      navigate("/error")
     }
   };
 

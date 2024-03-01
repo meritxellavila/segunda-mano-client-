@@ -106,6 +106,7 @@ function EditProduct(props) {
       navigate(`/ProductDetall/${productId}`);
     } catch (error) {
       console.log(error);
+      navigate("/error")
     }
   };
   return (

@@ -45,7 +45,7 @@ function Navbar() {
             return(
               <div id='resultados' key={eachSearch.id}>
                 <Link to={`/ProductDetall/${eachSearch.id}`}>
-                  <img src={eachSearch.image} alt="imagen" />
+                  <img src={eachSearch.image} alt="imagen" width={"40px"} />
                   <h5>{eachSearch.name}</h5>  
                 </Link>
               </div>

@@ -43,6 +43,7 @@ function EditReview() {
             navigate(`/ProductDetall/${params.reviewId}`)
         } catch (error) {
             console.log(error)
+            navigate("/error")
         }
 
     }

@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import API_URL from "../utils/api";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Card, Button, Container, Row, Col } from "react-bootstrap";
 import Spinner from 'react-bootstrap/Spinner';
 
 
 function HomePage() {
+
+  const navigate = useNavigate()
+
   const [allProducts, setAllProducts] = useState(null);
 
   useEffect(() => {
@@ -18,7 +21,7 @@ function HomePage() {
       })
       .catch((error) => {
         console.log(error);
-        return <h1>No se han encontrado productos</h1>;
+        navigate("/error")
       });
   }, []);
 

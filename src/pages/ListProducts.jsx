@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import API_URL from '../utils/api'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import {
   Button,
@@ -16,6 +16,7 @@ import { Link } from 'react-router-dom';
 
 export default function ListProducts() {
 
+  const navigate = useNavigate()
   const params = useParams()
 
   const [categoryProducts, setCategoryProducts] = useState(null)
@@ -28,6 +29,7 @@ export default function ListProducts() {
     })
     .catch((error) => {
       console.log(error)
+      navigate("/error")
     })
   }, [params.category])
 

@@ -20,7 +20,7 @@ const Favoritos = () => {
       })
       .catch((error) => {
         console.log(error);
-        return <h1>No se han encontrado productos</h1>;
+        navigate("/error")
       });
   }, []);  
 
