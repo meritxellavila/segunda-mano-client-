@@ -50,3 +50,26 @@ Explora tesoros  en nuestra tienda online de segunda mano, donde cada artículo 
 | `/EditProduct/:productId`             | EditProduct       |                   | editar producto, volver a página de inicio                                 |
 | `/ListProducts/:category`       | ListProducts   | ProductDetall        | lista producto por categoría, detalle de producto                                |
 | `/ListProducts/:search`       | ListProducts   | ProductDetall        | detalle de producto                               |
+
+
+
+## Other Components
+- Navbar
+
+ ### Collaborators
+
+[Developer Meri](https://github.com/meritxellavila)
+
+[Developer Adri](https://github.com/AdriPriego)
+
+### Project
+
+[Repository Link Client](https://github.com/meritxellavila/segunda-mano-client-)
+
+[Repository Link Server](https://github.com/AdriPriego/segunda-mano-server)
+
+[Deploy Link](https://project-segunda-mano.netlify.app/)
+
+### Excalidraw
+
+[Link to your excalidraw](https://excalidraw.com/#json=-S99i0hkmG2R7IvDwDS1J,2pf2aQOCxvalzgbQICi5Tg)
