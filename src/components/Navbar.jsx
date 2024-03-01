@@ -68,8 +68,8 @@ function Navbar() {
               <li>Ropa</li>
             </Link>
             <br />
-            <Link to={"/ListProducts/veichulo"}>
-              <li>Veichulos</li>
+            <Link to={"/ListProducts/vehiculos"}>
+              <li>Vehiculos</li>
             </Link>
             <br />
             <Link to={"/ListProducts/casa"}>

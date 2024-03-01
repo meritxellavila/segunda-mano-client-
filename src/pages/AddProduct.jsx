@@ -1,12 +1,14 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
-import API_URL from "../utils/api"
+import API_URL from "../utils/api";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import InputGroup from "react-bootstrap/InputGroup";
 import { Form, Button, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
+
+const categories = ["ropa", "tecnologia", "vehiculos", "casa"];
 
 function AddProduct() {
   const navigate = useNavigate();
@@ -74,12 +76,8 @@ function AddProduct() {
         keyWords: keyWords,
         category: category,
       };
-      const response = await axios.post(
-        `${API_URL}/products`,
-        newProduct
-      );
+      const response = await axios.post(`${API_URL}/products`, newProduct);
       console.log(response);
-     
 
       setName("");
       setPrice(0);
@@ -91,7 +89,7 @@ function AddProduct() {
       });
       setKeyWords("");
       setCategory("");
-      navigate("/")
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
@@ -150,16 +148,20 @@ function AddProduct() {
               onChange={handleKeyWords}
             />
           </FloatingLabel>
+
           <FloatingLabel
             controlId="floatingInput"
             label="Category:"
             className="mb-3"
           >
-            <Form.Control
-              type="text"
-              value={category}
-              onChange={handleCategory}
-            />
+            <Form.Select value={category} onChange={handleCategory}>
+              <option value="">Selecciona una categoría</option>
+              {categories.map((categorias) => (
+                <option key={categorias} value={categorias}>
+                  {categorias}
+                </option>
+              ))}
+            </Form.Select>
           </FloatingLabel>
 
           <InputGroup className="mb-3 container">
@@ -169,7 +171,7 @@ function AddProduct() {
               checked={checkboxes.nuevo}
               onChange={() => handleCheckboxChange("nuevo")}
               disabled={checkboxes.usado}
-              className="me-3" 
+              className="me-3"
             />
             <Form.Check
               type="checkbox"
