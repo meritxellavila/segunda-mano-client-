@@ -15,7 +15,7 @@ import NotFound from "./pages/NotFound";
 
 function App() {
 
-  const [favoritos, setFavorites] = useState([]);
+  // const [favoritos, setFavorites] = useState([]);
 
   return (
     <div>
@@ -23,17 +23,17 @@ function App() {
 
       <Routes>
         <Route path={"/AddProduct"} element={<AddProduct />} />
-        {/* <Route path={"/Favoritos"} element={<Favoritos />} /> */}
+        <Route path={"/favoritos"} element={<Favoritos />} />
         <Route path={"/"} element={<HomePage />} />
         <Route path={"/ListProducts/:category"} element={<ListProducts />} />
         <Route path={"/ListProducts/:search"} element={<ListProducts />} />
-        {/* <Route path={"/ProductDetall/:productId"} element={<ProductDetall />} /> */}
-        <Route
+        <Route path={"/ProductDetall/:productId"} element={<ProductDetall />} />
+        {/* <Route
           path={"/ProductDetall/:productId"}
           element={<ProductDetall setFavorites={setFavorites} />}
-        />
+        /> */}
         <Route path={"/EditProduct/:productId"} element={<EditProduct />} />
-        <Route path="/favoritos" element={<Favoritos favoritos={favoritos} />} />
+        {/* <Route path="/favoritos" element={<Favoritos favoritos={favoritos} />} /> */}
         <Route path={"/EditReview/:reviewId"} element={<EditReview />} />
 
         <Route path={"*"} element={<NotFound />} />

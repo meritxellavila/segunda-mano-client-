@@ -66,10 +66,17 @@ li {
   border: 2px solid rgb(202, 13, 13);
 }
 .results {
-  
+  display: flex;
+  align-items: center;
   width: 300px;
   position: relative;
+  border: 1px solid grey;
   z-index: 10;
   background-color: white;
-  margin-top: 30px;
+  border-radius: 4px;
+}
+.buscador{
+  border: none;
+  width: 100%;
+  padding-left: 10px;
 }

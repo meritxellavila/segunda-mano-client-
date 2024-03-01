@@ -38,13 +38,15 @@ Explora tesoros  en nuestra tienda online de segunda mano, donde cada artículo 
 
 ## React Router Routes (React App)
 
+
+
 | Path                      | Page            | Components        | Behavior                                                      |
 | ------------------------- | ----------------| ----------------  |  ------------------------------------------------------------  |
-| `/`                       | Home            |                   | Home page                                                     |
-| `/signup`                 | Signup          |                   | Signup form, link to login, navigate to homepage after signup |
-| `/login`                  | Login           |                   | Login form, link to signup, navigate to homepage after login  |
-| `/profile`                | Profile         | EditProfile       | Navigate to homepage after logout, expire session             |
-| `/games/list`             | GameList        | AddGame, GameCard | Shows all films on backlog                                    |
-| `/games/edit`             | GamesEdit       |                   | Shows all games on backlog                                    |
-| `/games/favourites`       | FavouriteList   | GameCard          | Shows all games on backlog                                    |
-
+| `/`                       | HomePage           |                   | Home page                                                     |
+| `/ProductDetall/:productId`                 | ProductDetall        |                   | favoritos, editar producto, crear reseña, editar reseña, eliminar producto, volver a página de inicio |
+| `/favoritos`                  | Favoritos          |                   | añadir a favoritos, eliminar de favoritos  |
+| `/AddProduct`                | AddProduct        | AddProduct       | añadir productos, añadir categorías            |
+| `/EditReview/:reviewId`             | EditReview       | crear reseña, editar reseña                                   |
+| `/EditProduct/:productId`             | EditProduct       |                   | editar producto, volver a página de inicio                                 |
+| `/ListProducts/:category`       | ListProducts   | ProductDetall        | lista producto por categoría, detalle de producto                                |
+| `/ListProducts/:search`       | ListProducts   | ProductDetall        | detalle de producto                               |
