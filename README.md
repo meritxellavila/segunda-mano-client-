@@ -36,8 +36,7 @@ Explora tesoros  en nuestra tienda online de segunda mano, donde cada artículo 
 
 **NOTE -** Usa abajo la tabla para listar las rutas del front
 
-## React Router Routes (React App)
-
+## React Router Routes: Rutas (React App)
 
 
 | Path                      | Page            | Components        | Behavior                                                      |
@@ -58,18 +57,18 @@ Explora tesoros  en nuestra tienda online de segunda mano, donde cada artículo 
 
  ### Colaboradores
 
-[Developer Meri](https://github.com/meritxellavila)
+[Desarrolladora Meri](https://github.com/meritxellavila)
 
-[Developer Adri](https://github.com/AdriPriego)
+[Desarrollador Adri](https://github.com/AdriPriego)
 
 ### Proyecto
 
-[Repository Link Client](https://github.com/meritxellavila/segunda-mano-client-)
+[Link Repositorio  Cliente](https://github.com/meritxellavila/segunda-mano-client-)
 
-[Repository Link Server](https://github.com/AdriPriego/segunda-mano-server)
+[Link Repositorio Servidor](https://github.com/AdriPriego/segunda-mano-server)
 
-[Deploy Link](https://project-segunda-mano.netlify.app/)
+[Link Despliegue](https://project-segunda-mano.netlify.app/)
 
 ### Excalidraw
 
-[Link to your excalidraw](https://excalidraw.com/#json=-S99i0hkmG2R7IvDwDS1J,2pf2aQOCxvalzgbQICi5Tg)  
+[Link para excalidraw](https://excalidraw.com/#json=-S99i0hkmG2R7IvDwDS1J,2pf2aQOCxvalzgbQICi5Tg)  
