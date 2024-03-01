@@ -11,6 +11,7 @@ import ProductDetall from "./pages/ProductDetall";
 import EditProduct from './pages/EditProduct';
 import EditReview from "./pages/EditReview";
 import Navbar from "./components/Navbar";
+import NotFound from "./pages/NotFound";
 
 function App() {
 
@@ -34,6 +35,8 @@ function App() {
         <Route path={"/EditProduct/:productId"} element={<EditProduct />} />
         <Route path="/favoritos" element={<Favoritos favoritos={favoritos} />} />
         <Route path={"/EditReview/:reviewId"} element={<EditReview />} />
+
+        <Route path={"*"} element={<NotFound />} />
       </Routes>
     </div>
   );
