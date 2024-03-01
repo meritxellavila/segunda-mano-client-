@@ -32,9 +32,9 @@ Explora tesoros  en nuestra tienda online de segunda mano, donde cada artículo 
 - **modificar favorito** - Como usuario quiero poder modificar un favorito 
 - **crear reseña** - Como usuario quiero poder opinar sobre un producto, para poder dar informacion a otros usuarios.
 
-## Client Routes
+## Rutas Cliente
 
-**NOTE -** Use below table to list your frontend routes
+**NOTE -** Usa abajo la tabla para listar las rutas del front
 
 ## React Router Routes (React App)
 
@@ -53,16 +53,16 @@ Explora tesoros  en nuestra tienda online de segunda mano, donde cada artículo 
 
 
 
-## Other Components
+## Otros Componentes
 - Navbar
 
- ### Collaborators
+ ### Colaboradores
 
 [Developer Meri](https://github.com/meritxellavila)
 
 [Developer Adri](https://github.com/AdriPriego)
 
-### Project
+### Proyecto
 
 [Repository Link Client](https://github.com/meritxellavila/segunda-mano-client-)
 
