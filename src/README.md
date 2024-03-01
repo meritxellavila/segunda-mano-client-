@@ -72,4 +72,4 @@ Explora tesoros  en nuestra tienda online de segunda mano, donde cada artículo 
 
 ### Excalidraw
 
-[Link to your excalidraw](https://excalidraw.com/#json=-S99i0hkmG2R7IvDwDS1J,2pf2aQOCxvalzgbQICi5Tg)
+[Link to your excalidraw](https://excalidraw.com/#json=-S99i0hkmG2R7IvDwDS1J,2pf2aQOCxvalzgbQICi5Tg)  
