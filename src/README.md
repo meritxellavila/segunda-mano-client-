@@ -32,11 +32,12 @@ Explora tesoros  en nuestra tienda online de segunda mano, donde cada artículo 
 - **modificar favorito** - Como usuario quiero poder modificar un favorito 
 - **crear reseña** - Como usuario quiero poder opinar sobre un producto, para poder dar informacion a otros usuarios.
 
-## Rutas Cliente
+## Client Routes
 
-**NOTE -** Usa abajo la tabla para listar las rutas del front
+**NOTE -** Use below table to list your frontend routes
 
-## React Router Routes: Rutas (React App)
+## React Router Routes (React App)
+
 
 
 | Path                      | Page            | Components        | Behavior                                                      |
@@ -52,23 +53,23 @@ Explora tesoros  en nuestra tienda online de segunda mano, donde cada artículo 
 
 
 
-## Otros Componentes
+## Other Components
 - Navbar
 
- ### Colaboradores
+ ### Collaborators
 
-[Desarrolladora Meri](https://github.com/meritxellavila)
+[Developer Meri](https://github.com/meritxellavila)
 
-[Desarrollador Adri](https://github.com/AdriPriego)
+[Developer Adri](https://github.com/AdriPriego)
 
-### Proyecto
+### Project
 
-[Link Repositorio  Cliente](https://github.com/meritxellavila/segunda-mano-client-)
+[Repository Link Client](https://github.com/meritxellavila/segunda-mano-client-)
 
-[Link Repositorio Servidor](https://github.com/AdriPriego/segunda-mano-server)
+[Repository Link Server](https://github.com/AdriPriego/segunda-mano-server)
 
-[Link Despliegue](https://project-segunda-mano.netlify.app/)
+[Deploy Link](https://project-segunda-mano.netlify.app/)
 
 ### Excalidraw
 
-[Link para excalidraw](https://excalidraw.com/#json=-S99i0hkmG2R7IvDwDS1J,2pf2aQOCxvalzgbQICi5Tg)  
+[Link to your excalidraw](https://excalidraw.com/#json=-S99i0hkmG2R7IvDwDS1J,2pf2aQOCxvalzgbQICi5Tg)  

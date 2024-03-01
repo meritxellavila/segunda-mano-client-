@@ -39,7 +39,8 @@ function Navbar() {
         <Link to={"/"}>
           <img src={logo} alt="log" width={"60px"} />
         </Link>
-        <button className='results' onClick={handleBuscar}>🔎
+        <button className='results' onClick={handleBuscar}>
+          <span className="results-icon">🔎</span>
           <input onChange={handleSearch} className='buscador' type="search" name="busquedaproducto" placeholder='Buscar...' />
           {searchResult.map((eachSearch) => {
             return(
